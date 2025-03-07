@@ -60,6 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         
         setRandomCardImages();
+        
+        enableMobileFeatures();
     }
     
     
@@ -100,6 +102,27 @@ document.addEventListener('DOMContentLoaded', function() {
         
         
         checkoutBtn.addEventListener('click', processCheckout);
+        
+        
+        window.addEventListener('orientationchange', function() {
+            
+            setTimeout(() => {
+                setRandomCardImages();
+            }, 300);
+        });
+
+        
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const isMobile = window.innerWidth <= 768;
+                document.body.classList.toggle('is-mobile', isMobile);
+            }, 250);
+        });
+
+        
+        document.body.classList.toggle('is-mobile', window.innerWidth <= 768);
     }
     
     
@@ -503,6 +526,63 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 500);
             }, 3000);
         }, 100);
+    }
+    
+    function enableMobileFeatures() {
+        
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+            
+            function animateCartButton() {
+                const cartContainer = document.querySelector('.cart-container');
+                cartContainer.classList.add('added');
+                
+                setTimeout(() => {
+                    cartContainer.classList.remove('added');
+                }, 500);
+            }
+            
+            
+            window.originalShowNotification = showNotification;
+            showNotification = function(message, type = 'info') {
+                
+                const notification = document.createElement('div');
+                notification.classList.add('notification', type, 'mobile');
+                
+                let icon = 'check-circle';
+                if (type === 'error') icon = 'exclamation-circle';
+                if (type === 'success') icon = 'check-double';
+                
+                notification.innerHTML = `<i class="fas fa-${icon}"></i> ${message}`;
+                document.body.appendChild(notification);
+                
+                
+                animateCartButton();
+                
+                setTimeout(() => {
+                    notification.classList.add('show');
+                    setTimeout(() => {
+                        notification.classList.remove('show');
+                        setTimeout(() => {
+                            document.body.removeChild(notification);
+                        }, 300);
+                    }, 2000); 
+                }, 100);
+            };
+            
+            
+            const originalAddToCart = addToCart;
+            addToCart = function(burger) {
+                originalAddToCart(burger);
+                
+                
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            };
+        }
     }
     
     

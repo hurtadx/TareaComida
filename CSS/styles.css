@@ -898,9 +898,7 @@ footer {
     }
 }
 
-/* Añadir estas reglas al final del archivo CSS */
 
-/* Animación para el contador del carrito */
 .cart-count.animate {
     animation: pulse 0.3s ease;
 }
@@ -911,7 +909,6 @@ footer {
     100% { transform: scale(1); }
 }
 
-/* Estilo para notificaciones */
 .notification {
     position: fixed;
     bottom: 30px;
@@ -954,7 +951,6 @@ footer {
     opacity: 1;
 }
 
-/* Animación para cambio de imagen */
 .image-change {
     animation: fadeInOut 0.5s ease;
 }
@@ -965,7 +961,6 @@ footer {
     100% { opacity: 1; }
 }
 
-/* Animación para eliminación de elementos del carrito */
 .cart-item.removing {
     animation: slideOut 0.3s ease forwards;
 }
@@ -981,7 +976,6 @@ footer {
     }
 }
 
-/* Mejora en el hover de las opciones */
 .option:hover {
     border-color: var(--primary-color);
     box-shadow: 0 5px 15px rgba(230, 123, 34, 0.15);
@@ -994,7 +988,6 @@ footer {
     color: var(--primary-color);
 }
 
-/* Mejora en el botón del carrito */
 .shopCart {
     transition: transform 0.3s ease;
 }
@@ -1003,13 +996,11 @@ footer {
     transform: scale(1.15);
 }
 
-/* Mejorar efecto en las tarjetas */
 .burger-card:hover {
     transform: translateY(-15px);
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Efecto para el botón de pagar */
 .checkout-btn {
     transform-origin: center;
     transition: all 0.3s ease;
@@ -1020,7 +1011,6 @@ footer {
     letter-spacing: 1px;
 }
 
-/* Estilo para elementos seleccionados */
 .selected-items ul {
     padding-left: 0;
 }
@@ -1040,8 +1030,389 @@ footer {
     color: var(--primary-color);
 }
 
-/* Modal fade effect */
 .cart-modal {
     backdrop-filter: blur(3px);
     transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+@media (max-width: 768px) {
+        body {
+        padding-bottom: 60px;     }
+    
+        .navbar {
+        flex-direction: column;
+        padding: 0.8rem 1rem;
+    }
+    
+    .logo-container {
+        margin-bottom: 0.5rem;
+    }
+    
+    nav {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    nav ul {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
+    }
+    
+    .cart-container {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        z-index: 99;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .shopCart {
+        font-size: 1.3rem;
+    }
+    
+    .cart-count {
+        top: -5px;
+        right: -5px;
+    }
+    
+        .hero {
+        padding: 3rem 1rem;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+        .builder-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .burger-preview {
+        order: -1;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .preview-card {
+        position: static;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .burger-image {
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .burger-image img {
+        max-height: 100%;
+        object-fit: contain;
+    }
+    
+        .ingredient-section {
+        padding: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .section-header {
+        margin-bottom: 0.8rem;
+    }
+    
+    .section-header h4 {
+        font-size: 1.1rem;
+    }
+    
+    .options {
+        gap: 0.6rem;
+    }
+    
+    .option {
+        padding: 0.6rem;
+    }
+    
+        .cart-modal .cart-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .cart-header {
+        padding: 0.8rem;
+    }
+    
+    .cart-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .cart-item {
+        flex-direction: column;
+        position: relative;
+        padding-bottom: 1.5rem;
+    }
+    
+    .cart-item-img {
+        width: 100%;
+        height: 100px;
+        margin-bottom: 0.8rem;
+    }
+    
+    .cart-item-details {
+        width: 100%;
+    }
+    
+    .cart-item-quantity {
+        margin: 0.5rem 0;
+    }
+    
+    .cart-item-remove {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: rgba(255, 69, 69, 0.1);
+        padding: 0.3rem;
+        border-radius: 50%;
+    }
+    
+        .burger-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.6rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .logo-icon {
+        font-size: 1.8rem;
+    }
+    
+    nav ul {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    
+    nav ul li a {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .section-header {
+        flex-wrap: wrap;
+    }
+    
+    .price-tag {
+        font-size: 1rem;
+        margin: 1rem 0;
+    }
+    
+    #precio-total {
+        font-size: 1.2rem;
+    }
+    
+    .option {
+        padding: 0.5rem;
+    }
+    
+    .option label {
+        font-size: 0.9rem;
+    }
+    
+    .option .price {
+        font-size: 0.8rem;
+    }
+    
+        .cart-items {
+        max-height: 40vh;
+    }
+    
+        .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        align-items: center;
+    }
+    
+    .footer-info h4::after,
+    .footer-social h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-info p {
+        justify-content: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .options {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .burger-cards {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    
+    .burger-preview {
+        max-width: 280px;
+    }
+}
+
+@media (hover: none) {
+        .option {
+        padding: 0.8rem;
+    }
+    
+    .option:active {
+        background-color: rgba(255, 107, 53, 0.1);
+    }
+    
+    .shopCart,
+    .cta-button,
+    .add-popular,
+    .quantity-btn,
+    .cart-item-remove {
+        cursor: default;
+    }
+    
+        .quantity-btn {
+        min-width: 35px;
+        min-height: 35px;
+    }
+    
+        .cta-button:active,
+    .add-popular:active,
+    .checkout-btn:active {
+        transform: scale(0.98);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .notification {
+        background-color: rgba(30, 30, 30, 0.95);
+        color: #f5f5f5;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-container {
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 4px 10px rgba(255, 107, 53, 0.2);
+        }
+        50% {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 4px 10px rgba(255, 107, 53, 0.2);
+        }
+    }
+    
+        .cart-container.added {
+        animation: shake 0.5s ease-in-out;
+    }
+    
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+        20%, 40%, 60%, 80% { transform: translateX(3px); }
+    }
+}
+
+.notification.mobile {
+    bottom: 80px;
+    right: 15px;
+    max-width: calc(100% - 30px);
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+}
+
+body.is-mobile .burger-preview {
+    position: relative;
+}
+
+body.is-mobile .selected-items {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+body.is-mobile .option {
+    position: relative;
+}
+
+body.is-mobile .option input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+body.is-mobile .option label {
+    z-index: 0;
+    pointer-events: none;
+}
+
+body.is-mobile .option .price {
+    z-index: 0;
+    pointer-events: none;
+}
+
+body.is-mobile .cart-modal .cart-content {
+    border-radius: 10px 10px 0 0;
+    max-height: 80vh;
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    animation: slideUp 0.3s forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
