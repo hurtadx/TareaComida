@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gonzalo burger</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <i class="fas fa-hamburger logo-icon"></i>
+                <h1>Gonzalo Burger</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="menu.html"><i class="fas fa-utensils"></i> Menu</a></li>
+                    <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                </ul>
+                <div class="cart-container">
+                    <button class="shopCart" id="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <div class="hero">
+            <h2>¡Bienvenidos a Gonzalo burger!</h2>
+            <p class="tagline">El sabor que mereces, la hamburguesa que deseas</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <div class="intro-content">
+                <h3><i class="fas fa-fire"></i> ¡Crea tu hamburguesa perfecta!</h3>
+                <p>Personaliza tu hamburguesa a tu gusto seleccionando los ingredientes que más te gusten.</p>
+            </div>
+        </section>
+        
+        <section class="builder-container">
+            <div class="burger-preview">
+                <div class="preview-card">
+                    <div class="burger-image">
+                        <img src="img/burger-base.jpg" alt="Tu hamburguesa personalizada" id="burger-preview-img">
+                    </div>
+                    <h4><i class="fas fa-paint-brush"></i> Tu creación</h4>
+                    <div class="selected-items" id="selected-items">
+                        <p>Personaliza tu hamburguesa</p>
+                    </div>
+                    <div class="price-tag">
+                        <p>Precio total: <span id="precio-total">0</span> COP</p>
+                    </div>
+                    <button id="add-to-cart" class="cta-button">
+                        <i class="fas fa-cart-plus"></i> Añadir al carrito
+                    </button>
+                </div>
+            </div>
+            
+            <div class="burger-builder">
+                <div class="ingredient-section">
+                    <div class="section-header">
+                        <i class="fas fa-bread-slice"></i>
+                        <h4>Tipo de Pan <span class="required">(Obligatorio)</span></h4>
+                    </div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="bread" id="bread-1" value="normal" data-price="5000" checked>
+                            <label for="bread-1">Pan Normal</label>
+                            <span class="price">$5,000</span>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="bread" id="bread-2" value="brioche" data-price="7000">
+                            <label for="bread-2">Pan Brioche</label>
+                            <span class="price">$7,000</span>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="bread" id="bread-3" value="integral" data-price="6000">
+                            <label for="bread-3">Pan Integral</label>
+                            <span class="price">$6,000</span>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="bread" id="bread-4" value="ajo" data-price="8000">
+                            <label for="bread-4">Pan de Ajo</label>
+                            <span class="price">$8,000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ingredient-section">
+                    <div class="section-header">
+                        <i class="fas fa-drumstick-bite"></i>
+                        <h4>Tipo de Carne <span class="required">(Obligatorio)</span></h4>
+                    </div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="meat" id="meat-1" value="vacuno" data-price="12000" checked>
+                            <label for="meat-1">Vacuno</label>
+                            <span class="price">$12,000</span>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="meat" id="meat-2" value="pollo" data-price="10000">
+                            <label for="meat-2">Pollo</label>
+                            <span class="price">$10,000</span>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="meat" id="meat-3" value="vegana" data-price="15000">
+                            <label for="meat-3">Vegana</label>
+                            <span class="price">$15,000</span>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="meat" id="meat-4" value="premium" data-price="18000">
+                            <label for="meat-4">Angus Premium</label>
+                            <span class="price">$18,000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ingredient-section">
+                    <div class="section-header">
+                        <i class="fas fa-cheese"></i>
+                        <h4>Quesos <span class="optional">(Opcional)</span></h4>
+                    </div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" name="cheese" id="cheese-1" value="cheddar" data-price="3000">
+                            <label for="cheese-1">Queso Cheddar</label>
+                            <span class="price">$3,000</span>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="cheese" id="cheese-2" value="mozzarella" data-price="2800">
+                            <label for="cheese-2">Mozzarella</label>
+                            <span class="price">$2,800</span>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="cheese" id="cheese-3" value="azul" data-price="5000">
+                            <label for="cheese-3">Queso Azul</label>
+                            <span class="price">$5,000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ingredient-section">
+                    <div class="section-header">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Vegetales <span class="optional">(Opcional)</span></h4>
+                    </div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" name="veggies" id="veggie-1" value="lechuga" data-price="1500">
+                            <label for="veggie-1">Lechuga</label>
+                            <span class="price">$1,500</span>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="veggies" id="veggie-2" value="tomate" data-price="1500">
+                            <label for="veggie-2">Tomate</label>
+                            <span class="price">$1,500</span>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="veggies" id="veggie-3" value="cebolla" data-price="1200">
+                            <label for="veggie-3">Cebolla</label>
+                            <span class="price">$1,200</span>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="veggies" id="veggie-4" value="pepinillos" data-price="1800">
+                            <label for="veggie-4">Pepinillos</label>
+                            <span class="price">$1,800</span>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="veggies" id="veggie-5" value="aguacate" data-price="4000">
+                            <label for="veggie-5">Aguacate</label>
+                            <span class="price">$4,000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ingredient-section">
+                    <div class="section-header">
+                        <i class="fas fa-bacon"></i>
+                        <h4>Extras Premium <span class="optional">(Opcional)</span></h4>
+                    </div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" name="premium" id="premium-1" value="bacon" data-price="4500">
+                            <label for="premium-1">Tocineta</label>
+                            <span class="price">$4,500</span>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="premium" id="premium-2" value="huevo" data-price="3000">
+                            <label for="premium-2">Huevo Frito</label>
+                            <span class="price">$3,000</span>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="premium" id="premium-3" value="aros_cebolla" data-price="3500">
+                            <label for="premium-3">Aros de Cebolla</label>
+                            <span class="price">$3,500</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ingredient-section">
+                    <div class="section-header">
+                        <i class="fas fa-wine-bottle"></i>
+                        <h4>Salsas <span class="optional">(Opcional)</span></h4>
+                    </div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" name="sauces" id="sauce-1" value="bbq" data-price="1000">
+                            <label for="sauce-1">BBQ</label>
+                            <span class="price">$1,000</span>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="sauces" id="sauce-2" value="mayo" data-price="1000">
+                            <label for="sauce-2">Mayonesa</label>
+                            <span class="price">$1,000</span>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="sauces" id="sauce-3" value="ranch" data-price="1500">
+                            <label for="sauce-3">Ranch</label>
+                            <span class="price">$1,500</span>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="sauces" id="sauce-4" value="picante" data-price="1200">
+                            <label for="sauce-4">Salsa Picante</label>
+                            <span class="price">$1,200</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="popular-burgers">
+            <h3><i class="fas fa-star"></i> Nuestras hamburguesas más populares</h3>
+            <div class="burger-cards">
+                <div class="burger-card">
+                    <div class="burger-img">
+                        <img src="IMG/hamburguesa.png" alt="Hamburguesa Clásica">
+                        <div class="badge">Popular</div>
+                    </div>
+                    <div class="burger-info">
+                        <h4>La Clásica</h4>
+                        <p>Hamburguesa de vacuno con queso cheddar, lechuga, tomate y nuestra salsa especial.</p>
+                        <div class="burger-price">$18,000</div>
+                        <button class="add-popular" data-id="clasica" data-price="18000">
+                            <i class="fas fa-cart-plus"></i> Añadir
+                        </button>
+                    </div>
+                </div>
+                <div class="burger-card">
+                    <div class="burger-img">
+                        <img src="/IMG/MArtxel_Dic_2024-14-removebg-preview.png" alt="Hamburguesa Bacon">
+                    </div>
+                    <div class="burger-info">
+                        <h4>La Bacon</h4>
+                        <p>Hamburguesa de vacuno con queso, tocineta crujiente y salsa BBQ.</p>
+                        <div class="burger-price">$22,000</div>
+                        <button class="add-popular" data-id="bacon" data-price="22000">
+                            <i class="fas fa-cart-plus"></i> Añadir
+                        </button>
+                    </div>
+                </div>
+                <div class="burger-card">
+                    <div class="burger-img">
+                        <img src="IMG/BODI-2048x1196.png" alt="Hamburguesa Vegetariana">
+                        <div class="badge green">Veggie</div>
+                    </div>
+                    <div class="burger-info">
+                        <h4>La Veggie</h4>
+                        <p>Hamburguesa vegana con aguacate, lechuga y tomate en pan integral.</p>
+                        <div class="burger-price">$20,000</div>
+                        <button class="add-popular" data-id="veggie" data-price="20000">
+                            <i class="fas fa-cart-plus"></i> Añadir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-cart"></i> Tu carrito</h3>
+                <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-items" id="cart-items">
+             
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <p>Total: <span id="cart-total">$0</span></p>
+                </div>
+                <button class="checkout-btn" id="checkout-btn">
+                    <i class="fas fa-credit-card"></i> Pagar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-hamburger"></i>
+                <h3>Gonzalo Burger</h3>
+                <p>El sabor que mereces</p>
+            </div>
+            <div class="footer-info">
+                <h4>Horario</h4>
+                <p><i class="far fa-clock"></i> Lunes a Viernes: 11:00 - 22:00</p>
+                <p><i class="far fa-clock"></i> Fines de semana: 12:00 - 23:00</p>
+            </div>
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Gonzalo burger - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="/JS/script.js"></script>
+</body>
+</html>
